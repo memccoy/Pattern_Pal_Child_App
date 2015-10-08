@@ -30,7 +30,7 @@ class ScavengerHuntItem: NSObject, NSCoding {
     }
     
     required init(coder aDecoder: NSCoder) {
-        name = aDecoder.decodeObjectForKey(nameKey) as String
+        name = aDecoder.decodeObjectForKey(nameKey) as! String
         photo = aDecoder.decodeObjectForKey(photoKey) as? UIImage
     }
     

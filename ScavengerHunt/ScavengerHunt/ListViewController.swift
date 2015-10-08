@@ -14,7 +14,7 @@ class ListViewController: UITableViewController, UIImagePickerControllerDelegate
     let myManager = ItemsManager()
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+
         let imagePicker = UIImagePickerController()
         if UIImagePickerController.isSourceTypeAvailable(.Camera) {
             imagePicker.sourceType = .Camera
@@ -26,11 +26,10 @@ class ListViewController: UITableViewController, UIImagePickerControllerDelegate
         presentViewController(imagePicker, animated: true, completion: nil)
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
-        
-        if let indexPath = tableView.indexPathForSelectedRow() {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info : [String: AnyObject]) {
+        if let indexPath = tableView.indexPathForSelectedRow {
             let selectedItem = myManager.items[indexPath.row]
-            let photo = info[UIImagePickerControllerOriginalImage] as UIImage
+            let photo = info[UIImagePickerControllerOriginalImage] as! UIImage
             selectedItem.photo = photo
             dismissViewControllerAnimated(true, completion: { () -> Void in
                 self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
@@ -40,7 +39,7 @@ class ListViewController: UITableViewController, UIImagePickerControllerDelegate
     
     @IBAction func unwindToList(segue: UIStoryboardSegue) {
         if segue.identifier == "DoneItem" {
-            let addVC = segue.sourceViewController as AddViewController
+            let addVC = segue.sourceViewController as! AddViewController
             if let newItem = addVC.newItem {
                 myManager.items += [newItem]
                 myManager.save()
@@ -56,7 +55,7 @@ class ListViewController: UITableViewController, UIImagePickerControllerDelegate
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
        
-        let cell = tableView.dequeueReusableCellWithIdentifier("ListViewCell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("ListViewCell", forIndexPath: indexPath) as! UITableViewCell
         
         let item = myManager.items[indexPath.row]
         

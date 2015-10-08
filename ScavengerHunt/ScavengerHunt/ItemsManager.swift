@@ -12,12 +12,12 @@ class ItemsManager {
     var items = [ScavengerHuntItem] ()
     
     func archivePath() -> String? {
-        if let directoryList = NSSearchPathForDirectoriesInDomains(
-            NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true) {
-            if let documentsPath = directoryList.first as? String {
+        let directoryList = NSSearchPathForDirectoriesInDomains(
+            NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+            if let documentsPath = directoryList.first as String! {
                 return documentsPath + "/ScavengerHuntItems"
             }
-        }
+        
         return nil
     }
     
@@ -34,7 +34,7 @@ class ItemsManager {
     func unarchiveSavedItems() {
         if let theArchivePath = archivePath() {
             if NSFileManager.defaultManager().fileExistsAtPath(theArchivePath) {
-                items = NSKeyedUnarchiver.unarchiveObjectWithFile(theArchivePath) as [ScavengerHuntItem]
+                items = NSKeyedUnarchiver.unarchiveObjectWithFile(theArchivePath) as! [ScavengerHuntItem]
             }
         }
     }
