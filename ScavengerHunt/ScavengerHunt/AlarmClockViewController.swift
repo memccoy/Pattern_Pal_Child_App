@@ -13,11 +13,11 @@ class AlarmClockViewController : UIViewController {
     
     @IBOutlet var dateTimePicker : UIDatePicker?;
   
-    @IBAction func alarmSetButtonTapped(x:UIButton) {
+    func alarmSetButtonTapped(sender:UIButton) {
         NSLog("Alarm set button tapped");
     }
     
-    @IBAction func alarmCancelButtonTapped(x:UIButton) {
+    func alarmCancelButtonTapped(sender:UIButton) {
         NSLog("Alarm cancel button tapped");
     }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="53Y-B6-yEI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3IU-O0-psW">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
@@ -142,50 +142,60 @@
             </objects>
             <point key="canvasLocation" x="2138" y="1002"/>
         </scene>
-        <!--Login Controller-->
-        <scene sceneID="yDD-ov-j1s">
+        <!--Alarm Clock View Controller-->
+        <scene sceneID="sjg-mr-HwT">
             <objects>
-                <viewController id="53Y-B6-yEI" userLabel="Login Controller" customClass="LoginViewController" customModule="ScavengerHunt" sceneMemberID="viewController">
+                <viewController id="3IU-O0-psW" customClass="AlarmClockViewController" customModule="ScavengerHunt" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ZTT-gT-xZ3"/>
-                        <viewControllerLayoutGuide type="bottom" id="v9C-6t-zwm"/>
+                        <viewControllerLayoutGuide type="top" id="boQ-Es-Vp6"/>
+                        <viewControllerLayoutGuide type="bottom" id="HwQ-l4-mlb"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="eug-8r-x1T">
+                    <view key="view" contentMode="center" id="pPV-9i-bvG">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter Secret Key" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sy3-BX-QeO">
-                                <rect key="frame" x="206" y="304" width="188" height="30"/>
+                            <datePicker contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="tHp-gw-usm">
+                                <rect key="frame" x="24" y="43" width="553" height="196"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jcm-Yh-9r0">
-                                <rect key="frame" x="406" y="303" width="38" height="30"/>
+                                <date key="date" timeIntervalSinceReferenceDate="466279239.00036401">
+                                    <!--2015-10-11 18:00:39 +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="en_US"/>
+                            </datePicker>
+                            <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Sl-gK-1ed">
+                                <rect key="frame" x="111" y="263" width="379" height="57"/>
                                 <animations/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
-                                </accessibility>
-                                <state key="normal" title="Login"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Set Alarm">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="alarmSetButtonTapped:" destination="3IU-O0-psW" eventType="touchUpInside" id="qOH-MU-twN"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Welcome to Pattern Pal!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIo-Ax-keL" propertyAccessControl="none">
-                                <rect key="frame" x="206" y="92" width="188" height="178"/>
+                            <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y9o-a6-mqY">
+                                <rect key="frame" x="111" y="347" width="379" height="57"/>
                                 <animations/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES" adjustable="YES"/>
-                                </accessibility>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Cancel Alarm">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="alarmCancelButtonTapped:" destination="3IU-O0-psW" eventType="touchUpInside" id="4Im-Da-QXb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="dateTimePicker" destination="tHp-gw-usm" id="38T-EV-3F7"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cSl-GO-ruM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w9j-TH-suW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-216" y="990"/>
+            <point key="canvasLocation" x="-336" y="1016"/>
         </scene>
     </scenes>
 </document>
