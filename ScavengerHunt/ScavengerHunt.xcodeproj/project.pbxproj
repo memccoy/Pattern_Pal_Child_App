@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6D1FCE131BC6F985008F8B69 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1FCE121BC6F985008F8B69 /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		6938DAA01BD667E1004B79B7 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6938DA9F1BD667E1004B79B7 /* AddViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		696F5DF01BCB21FA000B50AE /* AlarmClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696F5DEF1BCB21FA000B50AE /* AlarmClockViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		696F5DF41BCB2456000B50AE /* main screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696F5DF31BCB2456000B50AE /* main screen.swift */; settings = {ASSET_TAGS = (); }; };
+		696F5DF61BCB3671000B50AE /* setting for a task view controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696F5DF51BCB3671000B50AE /* setting for a task view controller.swift */; settings = {ASSET_TAGS = (); }; };
+		6972B5871BD6AA2D00DC14DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6972B5861BD6AA2D00DC14DA /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		A7B086331BA243C2000DE495 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B086321BA243C2000DE495 /* AppDelegate.swift */; };
-		A7B086351BA243C2000DE495 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B086341BA243C2000DE495 /* AddViewController.swift */; };
-		A7B086381BA243C2000DE495 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7B086361BA243C2000DE495 /* Main.storyboard */; };
 		A7B0863A1BA243C2000DE495 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7B086391BA243C2000DE495 /* Images.xcassets */; };
 		A7B0863D1BA243C2000DE495 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7B0863B1BA243C2000DE495 /* LaunchScreen.xib */; };
 		A7B086491BA243C2000DE495 /* ScavengerHuntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B086481BA243C2000DE495 /* ScavengerHuntTests.swift */; };
@@ -30,12 +32,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6D1FCE121BC6F985008F8B69 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		6938DA9F1BD667E1004B79B7 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		696F5DEF1BCB21FA000B50AE /* AlarmClockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmClockViewController.swift; sourceTree = "<group>"; };
+		696F5DF31BCB2456000B50AE /* main screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "main screen.swift"; sourceTree = "<group>"; };
+		696F5DF51BCB3671000B50AE /* setting for a task view controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "setting for a task view controller.swift"; sourceTree = "<group>"; };
+		6972B5861BD6AA2D00DC14DA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A7B0862D1BA243C2000DE495 /* ScavengerHunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScavengerHunt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7B086311BA243C2000DE495 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7B086321BA243C2000DE495 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A7B086341BA243C2000DE495 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
-		A7B086371BA243C2000DE495 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A7B086391BA243C2000DE495 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A7B0863C1BA243C2000DE495 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		A7B086421BA243C2000DE495 /* ScavengerHuntTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScavengerHuntTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,16 +89,18 @@
 		A7B0862F1BA243C2000DE495 /* ScavengerHunt */ = {
 			isa = PBXGroup;
 			children = (
+				6972B5861BD6AA2D00DC14DA /* Main.storyboard */,
+				6938DA9F1BD667E1004B79B7 /* AddViewController.swift */,
+				696F5DF31BCB2456000B50AE /* main screen.swift */,
+				696F5DEF1BCB21FA000B50AE /* AlarmClockViewController.swift */,
 				A7B086321BA243C2000DE495 /* AppDelegate.swift */,
-				A7B086341BA243C2000DE495 /* AddViewController.swift */,
-				A7B086361BA243C2000DE495 /* Main.storyboard */,
 				A7B086541BA2723E000DE495 /* ScavengerHuntItem.swift */,
 				A7B086561BA281EA000DE495 /* ItemsManager.swift */,
-				6D1FCE121BC6F985008F8B69 /* LoginViewController.swift */,
 				A7B086521BA258EB000DE495 /* ListViewController.swift */,
 				A7B086391BA243C2000DE495 /* Images.xcassets */,
 				A7B0863B1BA243C2000DE495 /* LaunchScreen.xib */,
 				A7B086301BA243C2000DE495 /* Supporting Files */,
+				696F5DF51BCB3671000B50AE /* setting for a task view controller.swift */,
 			);
 			path = ScavengerHunt;
 			sourceTree = "<group>";
@@ -174,7 +180,7 @@
 				TargetAttributes = {
 					A7B0862C1BA243C2000DE495 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = R2689QE9B8;
+						DevelopmentTeam = X8M5KZ44QZ;
 					};
 					A7B086411BA243C2000DE495 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -206,7 +212,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7B086381BA243C2000DE495 /* Main.storyboard in Resources */,
+				6972B5871BD6AA2D00DC14DA /* Main.storyboard in Resources */,
 				A7B0863D1BA243C2000DE495 /* LaunchScreen.xib in Resources */,
 				A7B0863A1BA243C2000DE495 /* Images.xcassets in Resources */,
 			);
@@ -226,12 +232,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D1FCE131BC6F985008F8B69 /* LoginViewController.swift in Sources */,
-				A7B086351BA243C2000DE495 /* AddViewController.swift in Sources */,
 				A7B086331BA243C2000DE495 /* AppDelegate.swift in Sources */,
 				A7B086551BA2723E000DE495 /* ScavengerHuntItem.swift in Sources */,
+				6938DAA01BD667E1004B79B7 /* AddViewController.swift in Sources */,
+				696F5DF61BCB3671000B50AE /* setting for a task view controller.swift in Sources */,
 				A7B086531BA258EB000DE495 /* ListViewController.swift in Sources */,
 				A7B086571BA281EA000DE495 /* ItemsManager.swift in Sources */,
+				696F5DF41BCB2456000B50AE /* main screen.swift in Sources */,
+				696F5DF01BCB21FA000B50AE /* AlarmClockViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,14 +262,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A7B086361BA243C2000DE495 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A7B086371BA243C2000DE495 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A7B0863B1BA243C2000DE495 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -361,9 +361,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ScavengerHunt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "pattern-pal-build-identifier";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pattern-pal-build-identifier.ScavengerHunt";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "19b88fce-1757-442a-9575-43885d11f6ae";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -376,9 +376,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ScavengerHunt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "pattern-pal-build-identifier";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pattern-pal-build-identifier.ScavengerHunt";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "19b88fce-1757-442a-9575-43885d11f6ae";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

@@ -13,8 +13,8 @@ class ListViewController: UITableViewController, UIImagePickerControllerDelegate
     
     let myManager = ItemsManager()
     
+    /*
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-
         let imagePicker = UIImagePickerController()
         if UIImagePickerController.isSourceTypeAvailable(.Camera) {
             imagePicker.sourceType = .Camera
@@ -25,7 +25,7 @@ class ListViewController: UITableViewController, UIImagePickerControllerDelegate
         imagePicker.delegate = self
         presentViewController(imagePicker, animated: true, completion: nil)
     }
-    
+
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info : [String: AnyObject]) {
         if let indexPath = tableView.indexPathForSelectedRow {
             let selectedItem = myManager.items[indexPath.row]
@@ -36,6 +36,23 @@ class ListViewController: UITableViewController, UIImagePickerControllerDelegate
             })
         }
     }
+    */
+    
+    /*
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "editTask" {
+            let editController = segue.destinationViewController as! AddViewController
+            if let selectedCell = sender as? UITableViewCell{
+                let indexPath = tableView.indexPathForCell(selectedCell)
+                let selectedItem = myManager.items[indexPath!.row]
+                editController.timerTextField.text = String(selectedItem.minutes)
+                editController.textField.text = selectedItem.name
+                editController.photoImageView.image = selectedItem.photo
+                
+            }
+        }
+    }
+    */
     
     @IBAction func unwindToList(segue: UIStoryboardSegue) {
         if segue.identifier == "DoneItem" {
@@ -54,22 +71,46 @@ class ListViewController: UITableViewController, UIImagePickerControllerDelegate
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-       
-        let cell = tableView.dequeueReusableCellWithIdentifier("ListViewCell", forIndexPath: indexPath) as! UITableViewCell
+        navigationItem.rightBarButtonItem = editButtonItem();
+        let cell = tableView.dequeueReusableCellWithIdentifier("ListViewCell", forIndexPath: indexPath) as UITableViewCell
         
         let item = myManager.items[indexPath.row]
         
         if item.isCompleted {
-            cell.accessoryType = .Checkmark
+            //cell.accessoryType = .Checkmark
             cell.imageView?.image = item.photo
         } else {
-            cell.accessoryType = .None
+            //cell.accessoryType = .None
             cell.imageView?.image = nil
         }
+        var textStr = item.name;
+        if let minDoub = item.minutes{
+            textStr += "            "
+            textStr +=  String(minDoub)
+            textStr += " mins"
+        }
         
-        cell.textLabel?.text = item.name
-        
+        cell.textLabel?.text = textStr
         return cell
     }
     
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            // Delete the row from the data source
+            myManager.items.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            myManager.save()
+        } else if editingStyle == .Insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+    }
+    
+    override func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+        let movedObject = myManager.items[sourceIndexPath.row]
+        myManager.items.removeAtIndex(sourceIndexPath.row)
+        myManager.items.insert(movedObject, atIndex: destinationIndexPath.row)
+        NSLog("%@", "\(sourceIndexPath.row) => \(destinationIndexPath.row) \(myManager.items)")
+        myManager.save()
+        // To check for correctness enable: self.tableView.reloadData()
+    }
 }
