@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 class ListViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
     let myManager = ItemsManager()
     
     /*
@@ -38,30 +37,37 @@ class ListViewController: UITableViewController, UIImagePickerControllerDelegate
     }
     */
     
-    /*
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "editTask" {
             let editController = segue.destinationViewController as! AddViewController
             if let selectedCell = sender as? UITableViewCell{
                 let indexPath = tableView.indexPathForCell(selectedCell)
                 let selectedItem = myManager.items[indexPath!.row]
-                editController.timerTextField.text = String(selectedItem.minutes)
-                editController.textField.text = selectedItem.name
-                editController.photoImageView.image = selectedItem.photo
-                
+                editController.tmtx = String(Double(selectedItem.minutes!))
+                editController.tx = selectedItem.name
+                editController.img = selectedItem.photo
+                editController.ifedit = true;
+                editController.rowin = indexPath!.row;
             }
         }
     }
-    */
+    
     
     @IBAction func unwindToList(segue: UIStoryboardSegue) {
         if segue.identifier == "DoneItem" {
             let addVC = segue.sourceViewController as! AddViewController
-            if let newItem = addVC.newItem {
-                myManager.items += [newItem]
+            if addVC.ifedit {
+                myManager.items[addVC.rowin] = addVC.newItem!
                 myManager.save()
-                let indexPath = NSIndexPath(forRow: myManager.items.count - 1, inSection: 0)
-                tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+                self.tableView.reloadData()
+            }else{
+                if let newItem = addVC.newItem {
+                    myManager.items += [newItem]
+                    myManager.save()
+                    let indexPath = NSIndexPath(forRow: myManager.items.count - 1, inSection: 0)
+                    tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+                }
             }
         }
     }

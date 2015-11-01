@@ -9,7 +9,11 @@
 import UIKit
 
 class AddViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
-
+    var tmtx:String = "";
+    var tx:String = "";
+    var ifedit:Bool = false
+    var rowin:Int = 0
+    
     @IBOutlet weak var timerTextField: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBAction func cancel(sender: AnyObject) {
@@ -46,6 +50,7 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIImagePickerCon
                         newItem!.time = timer
                     }
                     */
+                    
 
                 }
                 
@@ -58,9 +63,10 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIImagePickerCon
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        textField.text = tx;
+        timerTextField.text = tmtx;
+        photoImageView.image = img;
 
-        
         // Set up views if editing an existing Meal.
 
     }
@@ -93,6 +99,7 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIImagePickerCon
         textField.resignFirstResponder()
         
         // UIImagePickerController is a view controller that lets a user pick media from their photo library.
+        print("haha")
         let imagePickerController = UIImagePickerController()
         
         // Only allow photos to be picked, not taken.
