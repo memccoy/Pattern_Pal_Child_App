@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6938DAA01BD667E1004B79B7 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6938DA9F1BD667E1004B79B7 /* AddViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		696F5DF01BCB21FA000B50AE /* AlarmClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696F5DEF1BCB21FA000B50AE /* AlarmClockViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		696F5DF41BCB2456000B50AE /* main screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696F5DF31BCB2456000B50AE /* main screen.swift */; settings = {ASSET_TAGS = (); }; };
-		696F5DF61BCB3671000B50AE /* setting for a task view controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696F5DF51BCB3671000B50AE /* setting for a task view controller.swift */; settings = {ASSET_TAGS = (); }; };
-		6972B5871BD6AA2D00DC14DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6972B5861BD6AA2D00DC14DA /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
+		6938DAA01BD667E1004B79B7 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6938DA9F1BD667E1004B79B7 /* AddViewController.swift */; };
+		693EBA041BF44A8300CA294C /* TastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693EBA031BF44A8300CA294C /* TastViewController.swift */; };
+		696F5DF01BCB21FA000B50AE /* AlarmClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696F5DEF1BCB21FA000B50AE /* AlarmClockViewController.swift */; };
+		696F5DF41BCB2456000B50AE /* main screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696F5DF31BCB2456000B50AE /* main screen.swift */; };
+		696F5DF61BCB3671000B50AE /* setting for a task view controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696F5DF51BCB3671000B50AE /* setting for a task view controller.swift */; };
+		6972B5871BD6AA2D00DC14DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6972B5861BD6AA2D00DC14DA /* Main.storyboard */; };
+		69B28BB31BF57D7200471D27 /* smileface.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 69B28BB21BF57D7200471D27 /* smileface.jpg */; };
+		69B28BB51BF583F700471D27 /* cong.png in Resources */ = {isa = PBXBuildFile; fileRef = 69B28BB41BF583F700471D27 /* cong.png */; };
 		A7B086331BA243C2000DE495 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B086321BA243C2000DE495 /* AppDelegate.swift */; };
 		A7B0863A1BA243C2000DE495 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7B086391BA243C2000DE495 /* Images.xcassets */; };
 		A7B0863D1BA243C2000DE495 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7B0863B1BA243C2000DE495 /* LaunchScreen.xib */; };
@@ -33,10 +36,13 @@
 
 /* Begin PBXFileReference section */
 		6938DA9F1BD667E1004B79B7 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		693EBA031BF44A8300CA294C /* TastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TastViewController.swift; sourceTree = "<group>"; };
 		696F5DEF1BCB21FA000B50AE /* AlarmClockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmClockViewController.swift; sourceTree = "<group>"; };
 		696F5DF31BCB2456000B50AE /* main screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "main screen.swift"; sourceTree = "<group>"; };
 		696F5DF51BCB3671000B50AE /* setting for a task view controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "setting for a task view controller.swift"; sourceTree = "<group>"; };
 		6972B5861BD6AA2D00DC14DA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		69B28BB21BF57D7200471D27 /* smileface.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = smileface.jpg; sourceTree = "<group>"; };
+		69B28BB41BF583F700471D27 /* cong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cong.png; sourceTree = "<group>"; };
 		A7B0862D1BA243C2000DE495 /* ScavengerHunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScavengerHunt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7B086311BA243C2000DE495 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7B086321BA243C2000DE495 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,12 +95,15 @@
 		A7B0862F1BA243C2000DE495 /* ScavengerHunt */ = {
 			isa = PBXGroup;
 			children = (
+				69B28BB41BF583F700471D27 /* cong.png */,
+				69B28BB21BF57D7200471D27 /* smileface.jpg */,
 				6972B5861BD6AA2D00DC14DA /* Main.storyboard */,
 				6938DA9F1BD667E1004B79B7 /* AddViewController.swift */,
 				696F5DF31BCB2456000B50AE /* main screen.swift */,
 				696F5DEF1BCB21FA000B50AE /* AlarmClockViewController.swift */,
 				A7B086321BA243C2000DE495 /* AppDelegate.swift */,
 				A7B086541BA2723E000DE495 /* ScavengerHuntItem.swift */,
+				693EBA031BF44A8300CA294C /* TastViewController.swift */,
 				A7B086561BA281EA000DE495 /* ItemsManager.swift */,
 				A7B086521BA258EB000DE495 /* ListViewController.swift */,
 				A7B086391BA243C2000DE495 /* Images.xcassets */,
@@ -213,6 +222,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6972B5871BD6AA2D00DC14DA /* Main.storyboard in Resources */,
+				69B28BB51BF583F700471D27 /* cong.png in Resources */,
+				69B28BB31BF57D7200471D27 /* smileface.jpg in Resources */,
 				A7B0863D1BA243C2000DE495 /* LaunchScreen.xib in Resources */,
 				A7B0863A1BA243C2000DE495 /* Images.xcassets in Resources */,
 			);
@@ -237,6 +248,7 @@
 				6938DAA01BD667E1004B79B7 /* AddViewController.swift in Sources */,
 				696F5DF61BCB3671000B50AE /* setting for a task view controller.swift in Sources */,
 				A7B086531BA258EB000DE495 /* ListViewController.swift in Sources */,
+				693EBA041BF44A8300CA294C /* TastViewController.swift in Sources */,
 				A7B086571BA281EA000DE495 /* ItemsManager.swift in Sources */,
 				696F5DF41BCB2456000B50AE /* main screen.swift in Sources */,
 				696F5DF01BCB21FA000B50AE /* AlarmClockViewController.swift in Sources */,
