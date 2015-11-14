@@ -24,8 +24,9 @@ class TaskViewController : UIViewController {
     override func viewDidLoad() {
         btnImg = UIImage(named:"smileface.jpg")
         donebtn.setImage(btnImg, forState: .Normal)
-        super.viewDidLoad()
-        nextTask();
+        super.viewDidLoad();
+        getup();
+        //nextTask();
     }
     
     var timer = NSTimer()
@@ -90,6 +91,19 @@ class TaskViewController : UIViewController {
         imgView.image = myManager.items[idx].photo;
         if (idx + 1 < myManager.items.count){
             nextTaskLabel.text = "Next task: " + myManager.items[idx + 1].name;
+        } else {
+            nextTaskLabel.text = " ";
+        }
+    }
+    
+    func getup(){
+        taskLabel.text = "Current task: get up";
+        timeCount = 30;
+        timerLabel.text = timeString(timeCount)
+        timer = NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "timerDidEnd:", userInfo: "Task Done!", repeats: true)
+        imgView.image = UIImage(named:"getUp.jpg");
+        if (myManager.items.count > 0){
+            nextTaskLabel.text = "Next task: " + myManager.items[0].name;
         } else {
             nextTaskLabel.text = " ";
         }

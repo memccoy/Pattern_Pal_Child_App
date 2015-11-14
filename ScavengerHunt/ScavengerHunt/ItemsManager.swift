@@ -10,6 +10,7 @@ import UIKit
 
 class ItemsManager {
     var items = [ScavengerHuntItem] ()
+    //var getUpItem: ScavengerHuntItem
     
     func archivePath() -> String? {
         let directoryList = NSSearchPathForDirectoriesInDomains(
@@ -25,7 +26,10 @@ class ItemsManager {
         if let theArchivePath = archivePath() {
             if !NSKeyedArchiver.archiveRootObject(items, toFile: theArchivePath) {
                 assertionFailure("Could not save data to \(theArchivePath)")
-            }
+            }/*
+            if !NSKeyedArchiver.archiveRootObject(getUpItem, toFile: theArchivePath + "/getUpTimeInterval") {
+                assertionFailure("Could not save data to \(theArchivePath)")
+            }*/
         } else {
             assertionFailure("Could not determine where to save file")
         }

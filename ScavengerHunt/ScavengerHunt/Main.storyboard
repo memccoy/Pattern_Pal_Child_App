@@ -296,7 +296,7 @@
                         <barButtonItem title="Set Alarm" id="saH-GO-mBO">
                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="3IU-O0-psW" kind="presentation" identifier="gotoalarmsetting" id="qSA-I4-f9W"/>
+                                <segue destination="9Wj-QC-ZRE" kind="show" id="Lv2-Il-u4H"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="zEZ-5u-hgf"/>
@@ -314,93 +314,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n7n-Xm-BFy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1069" y="233"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="sjg-mr-HwT">
-            <objects>
-                <viewController id="3IU-O0-psW" customClass="AlarmClockViewController" customModule="ScavengerHunt" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="boQ-Es-Vp6"/>
-                        <viewControllerLayoutGuide type="bottom" id="HwQ-l4-mlb"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="center" id="pPV-9i-bvG">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="center" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Sl-gK-1ed">
-                                <rect key="frame" x="111" y="263" width="379" height="57"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="57" id="109-jZ-Apl"/>
-                                </constraints>
-                                <state key="normal" title="Set Alarm">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="alarmSetButtonTapped:" destination="3IU-O0-psW" eventType="touchUpInside" id="qOH-MU-twN"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="center" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y9o-a6-mqY">
-                                <rect key="frame" x="111" y="347" width="379" height="57"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="57" id="jVg-8f-wsk"/>
-                                </constraints>
-                                <state key="normal" title="Cancel Alarm">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="alarmCancelButtonTapped:" destination="3IU-O0-psW" eventType="touchUpInside" id="4Im-Da-QXb"/>
-                                </connections>
-                            </button>
-                            <datePicker contentMode="center" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="tHp-gw-usm">
-                                <rect key="frame" x="24" y="44" width="553" height="196"/>
-                                <animations/>
-                                <date key="date" timeIntervalSinceReferenceDate="466279239.00036401">
-                                    <!--2015-10-11 18:00:39 +0000-->
-                                </date>
-                                <locale key="locale" localeIdentifier="en_US"/>
-                            </datePicker>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2cV-RL-blk">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                <animations/>
-                                <items>
-                                    <navigationItem title="Title" id="acG-EK-gds">
-                                        <barButtonItem key="leftBarButtonItem" title="back" id="ILk-cg-sIg">
-                                            <connections>
-                                                <segue destination="646-41-wtv" kind="presentation" id="cMR-uQ-Zwc"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
-                        <animations/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="tHp-gw-usm" firstAttribute="leading" secondItem="pPV-9i-bvG" secondAttribute="leadingMargin" constant="4" id="7br-U9-qk5"/>
-                            <constraint firstItem="tHp-gw-usm" firstAttribute="centerX" secondItem="pPV-9i-bvG" secondAttribute="centerX" id="GtD-YX-qSv"/>
-                            <constraint firstItem="1Sl-gK-1ed" firstAttribute="centerX" secondItem="tHp-gw-usm" secondAttribute="centerX" id="Ibo-lM-ceh"/>
-                            <constraint firstItem="1Sl-gK-1ed" firstAttribute="leading" secondItem="y9o-a6-mqY" secondAttribute="leading" id="Q1h-wf-CTc"/>
-                            <constraint firstItem="y9o-a6-mqY" firstAttribute="trailing" secondItem="1Sl-gK-1ed" secondAttribute="trailing" id="V2P-za-gGn"/>
-                            <constraint firstItem="1Sl-gK-1ed" firstAttribute="leading" secondItem="pPV-9i-bvG" secondAttribute="leadingMargin" constant="91" id="n9Y-0q-rK1"/>
-                            <constraint firstItem="y9o-a6-mqY" firstAttribute="top" secondItem="1Sl-gK-1ed" secondAttribute="bottom" constant="27" id="pgi-IA-rU3"/>
-                            <constraint firstItem="HwQ-l4-mlb" firstAttribute="top" secondItem="y9o-a6-mqY" secondAttribute="bottom" constant="196" id="pzo-59-WW7"/>
-                            <constraint firstItem="1Sl-gK-1ed" firstAttribute="top" secondItem="tHp-gw-usm" secondAttribute="bottom" constant="25" id="qpP-MT-byH"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="gww-VE-hKh"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="dateTimePicker" destination="tHp-gw-usm" id="38T-EV-3F7"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="w9j-TH-suW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-170" y="1228"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="UWK-26-bL4">
@@ -520,13 +433,109 @@
             </objects>
             <point key="canvasLocation" x="3849" y="1650"/>
         </scene>
+        <!--Alarm Clock View Controller-->
+        <scene sceneID="VtV-CZ-BTm">
+            <objects>
+                <viewController id="9Wj-QC-ZRE" customClass="AlarmClockViewController" customModule="ScavengerHunt" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sot-S1-ACC"/>
+                        <viewControllerLayoutGuide type="bottom" id="D6V-Cl-e4Y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="center" id="Fl0-vI-eF4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Kas-Ay-gu4">
+                                <rect key="frame" x="24" y="43" width="553" height="182"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="182" id="fY9-e9-Zmt"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="466279239.00036401">
+                                    <!--2015-10-11 18:00:39 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdT-XW-9rw">
+                                <rect key="frame" x="95" y="358" width="410" height="68"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="hpy-qD-ms0"/>
+                                </constraints>
+                                <state key="normal" title="Cancel Alarm">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="alarmCancelButtonTapped:" destination="9Wj-QC-ZRE" eventType="touchUpInside" id="ZyU-L1-Kof"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmQ-fX-IR8">
+                                <rect key="frame" x="95" y="259" width="410" height="68"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Set Alarm">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="alarmSetButtonTapped:" destination="9Wj-QC-ZRE" eventType="touchUpInside" id="rB7-CW-c6l"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="No Alarm Set" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veH-AO-TSU">
+                                <rect key="frame" x="95" y="453" width="410" height="39"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="gdT-XW-9rw" firstAttribute="leading" secondItem="Fl0-vI-eF4" secondAttribute="leadingMargin" constant="75" id="3wu-yg-kSY"/>
+                            <constraint firstItem="Kas-Ay-gu4" firstAttribute="centerX" secondItem="veH-AO-TSU" secondAttribute="centerX" id="9K3-pJ-zoA"/>
+                            <constraint firstItem="veH-AO-TSU" firstAttribute="height" secondItem="cmQ-fX-IR8" secondAttribute="height" id="Fon-Hj-uNz"/>
+                            <constraint firstItem="Kas-Ay-gu4" firstAttribute="centerX" secondItem="gdT-XW-9rw" secondAttribute="centerX" id="J4r-FO-2se"/>
+                            <constraint firstItem="veH-AO-TSU" firstAttribute="height" secondItem="cmQ-fX-IR8" secondAttribute="height" id="JiI-h3-pcl"/>
+                            <constraint firstItem="gdT-XW-9rw" firstAttribute="height" secondItem="cmQ-fX-IR8" secondAttribute="height" id="Ojc-jn-BPW"/>
+                            <constraint firstItem="veH-AO-TSU" firstAttribute="top" secondItem="gdT-XW-9rw" secondAttribute="bottom" constant="27" id="PRQ-lJ-l1J"/>
+                            <constraint firstItem="gdT-XW-9rw" firstAttribute="height" secondItem="cmQ-fX-IR8" secondAttribute="height" id="QHL-hB-xIa"/>
+                            <constraint firstItem="veH-AO-TSU" firstAttribute="width" secondItem="cmQ-fX-IR8" secondAttribute="width" id="Sbf-dg-hS9"/>
+                            <constraint firstItem="Kas-Ay-gu4" firstAttribute="centerX" secondItem="Fl0-vI-eF4" secondAttribute="centerX" id="YZM-2g-XC8"/>
+                            <constraint firstItem="gdT-XW-9rw" firstAttribute="leading" secondItem="veH-AO-TSU" secondAttribute="leading" id="bFq-Xr-LDA"/>
+                            <constraint firstItem="Kas-Ay-gu4" firstAttribute="centerX" secondItem="cmQ-fX-IR8" secondAttribute="centerX" id="lRe-IH-mhb"/>
+                            <constraint firstItem="gdT-XW-9rw" firstAttribute="width" secondItem="cmQ-fX-IR8" secondAttribute="width" id="mE3-yM-egk"/>
+                            <constraint firstItem="cmQ-fX-IR8" firstAttribute="top" secondItem="Kas-Ay-gu4" secondAttribute="bottom" constant="34" id="oyu-Km-s9N"/>
+                            <constraint firstItem="gdT-XW-9rw" firstAttribute="top" secondItem="cmQ-fX-IR8" secondAttribute="bottom" constant="31" id="pmB-aC-D2b"/>
+                            <constraint firstItem="gdT-XW-9rw" firstAttribute="leading" secondItem="cmQ-fX-IR8" secondAttribute="leading" id="qOq-nQ-RDh"/>
+                            <constraint firstAttribute="bottom" secondItem="gdT-XW-9rw" secondAttribute="bottom" constant="174" id="qcz-Ef-bNa"/>
+                            <constraint firstItem="veH-AO-TSU" firstAttribute="height" secondItem="gdT-XW-9rw" secondAttribute="height" id="vuN-mr-8wL"/>
+                            <constraint firstItem="Kas-Ay-gu4" firstAttribute="leading" secondItem="Fl0-vI-eF4" secondAttribute="leadingMargin" constant="4" id="wHt-Lu-lnV"/>
+                            <constraint firstItem="Kas-Ay-gu4" firstAttribute="top" secondItem="sot-S1-ACC" secondAttribute="bottom" constant="23" id="ybz-v2-DJe"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="TOb-CQ-EWE"/>
+                        <barButtonItem title="Done" id="l5E-lR-N6P"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="EsP-gh-oNd"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="EAd-6f-TPt"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="dateLabel" destination="veH-AO-TSU" id="AT4-HJ-g1x"/>
+                        <outlet property="dateTimePicker" destination="Kas-Ay-gu4" id="WgQ-Ue-vfy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Viw-V8-p4T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-59" y="1048"/>
+        </scene>
     </scenes>
     <resources>
         <image name="default" width="540" height="540"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HFz-yg-7vj"/>
         <segue reference="uBk-yA-EP1"/>
-        <segue reference="cMR-uQ-Zwc"/>
+        <segue reference="HFz-yg-7vj"/>
     </inferredMetricsTieBreakers>
 </document>
