@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="646-41-wtv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="646-41-wtv">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
@@ -143,7 +143,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="qWs-dJ-mkT">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <animations/>
                             <items>
@@ -152,14 +152,14 @@
                         </navigationBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListViewCell" textLabel="ytV-KS-CMe" style="IBUITableViewCellStyleDefault" id="7lB-Qv-DCR">
-                                <rect key="frame" x="0.0" y="66" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="130" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7lB-Qv-DCR" id="ccj-EU-JzC">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ytV-KS-CMe">
-                                            <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="570" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -254,7 +254,7 @@
         <!--main screen scene-->
         <scene sceneID="NNe-vc-0RS">
             <objects>
-                <viewController title="main screen scene" id="Lke-5B-eBm" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="main_screen" title="main screen scene" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Lke-5B-eBm" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vk7-H3-G6J"/>
                         <viewControllerLayoutGuide type="bottom" id="m1v-Sk-WP4"/>
@@ -318,7 +318,7 @@
         <!--Navigation Controller-->
         <scene sceneID="UWK-26-bL4">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="646-41-wtv" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="main_nav_screen" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" toolbarHidden="NO" id="646-41-wtv" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qHh-UJ-Qmu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -400,6 +400,11 @@
                                     <action selector="doneBtnTapped:" destination="6hQ-fT-F6R" eventType="touchUpInside" id="Q8O-UD-YTd"/>
                                 </connections>
                             </button>
+                            <webView hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uZj-Ln-biP">
+                                <rect key="frame" x="247" y="265" width="240" height="128"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -422,6 +427,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="uLe-UR-Hwh"/>
                     <connections>
+                        <outlet property="LightsWebView" destination="uZj-Ln-biP" id="kQY-E3-Lrg"/>
                         <outlet property="donebtn" destination="1MX-4e-UNx" id="PaZ-v7-8fB"/>
                         <outlet property="imgView" destination="xFs-6w-Adu" id="s3c-Qg-smV"/>
                         <outlet property="nextTaskLabel" destination="zj1-QW-FLZ" id="XyQ-1w-IMi"/>
@@ -445,7 +451,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Kas-Ay-gu4">
+                            <datePicker contentMode="center" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Kas-Ay-gu4">
                                 <rect key="frame" x="24" y="43" width="553" height="182"/>
                                 <animations/>
                                 <constraints>
@@ -455,7 +461,7 @@
                                     <!--2015-10-11 18:00:39 +0000-->
                                 </date>
                             </datePicker>
-                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdT-XW-9rw">
+                            <button opaque="NO" contentMode="center" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdT-XW-9rw">
                                 <rect key="frame" x="95" y="358" width="410" height="68"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -469,7 +475,7 @@
                                     <action selector="alarmCancelButtonTapped:" destination="9Wj-QC-ZRE" eventType="touchUpInside" id="ZyU-L1-Kof"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmQ-fX-IR8">
+                            <button opaque="NO" contentMode="center" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmQ-fX-IR8">
                                 <rect key="frame" x="95" y="259" width="410" height="68"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -535,7 +541,7 @@
         <image name="default" width="540" height="540"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="mhL-0k-dE3"/>
         <segue reference="uBk-yA-EP1"/>
-        <segue reference="HFz-yg-7vj"/>
     </inferredMetricsTieBreakers>
 </document>

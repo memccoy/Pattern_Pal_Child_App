@@ -11,6 +11,7 @@ import UIKit
 
 class TaskViewController : UIViewController {
 
+    @IBOutlet weak var LightsWebView: UIWebView!
     let myManager = ItemsManager()
     var idx = 0
     
@@ -58,6 +59,9 @@ class TaskViewController : UIViewController {
     
     func startTimer (){
         if (!timer.valid) {
+            let url = NSURL (string:"http://192.168.2.9/$2");
+            let req = NSURLRequest(URL: url!);
+            LightsWebView.loadRequest(req);
             timeCount = 60 * myManager.items[idx].minutes!;
             setUI();
             timerLabel.text = timeString(timeCount)
@@ -65,6 +69,9 @@ class TaskViewController : UIViewController {
             timer = NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "timerDidEnd:", userInfo: "Task Done!", repeats: true)
             
         }
+        let url = NSURL (string: "http://192.168.2.9/$1");
+        let req = NSURLRequest(URL: url!);
+        LightsWebView.loadRequest(req);
     }
     
     func nextTask(){
@@ -77,6 +84,8 @@ class TaskViewController : UIViewController {
                 imgView.image = UIImage(named:"cong.png");
                 taskLabel.text = "";
                 nextTaskLabel.text = "";
+                donebtn.addTarget(self, action: "pressed:", forControlEvents: .TouchUpInside)
+
             } else {
                 taskLabel.text = "";
                 timerLabel.text = "No task yet.";
@@ -84,6 +93,12 @@ class TaskViewController : UIViewController {
             }
 
         }
+    }
+    
+    func pressed(sender: UIButton!) {
+        NSLog("last task button tapped");
+        let vc: UINavigationController = storyboard!.instantiateViewControllerWithIdentifier("main_nav_screen") as! UINavigationController;
+        self.presentViewController(vc, animated: true, completion: nil);
     }
     
     func setUI(){

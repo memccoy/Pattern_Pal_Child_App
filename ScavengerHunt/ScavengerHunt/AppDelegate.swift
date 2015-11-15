@@ -35,6 +35,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
         NSLog("Come from notification");
+        let storyboard = UIStoryboard(name: "Main", bundle: nil);
+        let rootVC = storyboard.instantiateViewControllerWithIdentifier("TaskViewController") as!TaskViewController;
+        self.window!.rootViewController = rootVC;
     }
 
     func applicationWillResignActive(application: UIApplication) {
