@@ -15,7 +15,20 @@ class TaskViewController : UIViewController {
     @IBOutlet weak var LightsWebView: UIWebView!
     let myManager = ItemsManager()
     var idx = 0
-    var urls: [String] = ["http://192.168.2.9/$", "http://192.168.2.10/$",  "http://192.168.2.11/$", "http://192.168.2.12/$", "http://192.168.2.13/$"]
+    
+    //time for get up, in minutes
+    let getUpTime:Double = 30;
+
+    //url for get up
+    let getUpUrl:String = "http://192.168.2.9/$";
+    //urls for task
+    var urls: [String] = ["http://192.168.2.10/$",  "http://192.168.2.11/$", "http://192.168.2.12/$", "http://192.168.2.13/$"]
+
+    /*
+    //urls used for test
+    let getUpUrl:String = "http://localhost:5000/getUp/";
+    var urls: [String] = ["http://localhost:5000/taskAtIdx0/","http://localhost:5000/taskAtIdx1/","http://localhost:5000/taskAtIdx2/","http://localhost:5000/taskAtIdx3/","http://localhost:5000/taskAtIdx4/"]
+    */
     
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var donebtn: UIButton!
@@ -29,7 +42,6 @@ class TaskViewController : UIViewController {
         donebtn.setImage(btnImg, forState: .Normal)
         super.viewDidLoad();
         getup();
-        //nextTask();
     }
     
     var timer = NSTimer()
@@ -48,9 +60,8 @@ class TaskViewController : UIViewController {
     }
     
     //MARK: Instance Methods
+    //called evry NSTimeInterval seconds
     func timerDidEnd(timer:NSTimer){
-        // first timer iteration
-        //
         timeCount = timeCount - timeInterval
         if (timeCount <= 0 ) {
             nextTask();
@@ -72,25 +83,27 @@ class TaskViewController : UIViewController {
     
     func nextTask(){
         timer.invalidate();
-        if (idx < myManager.items.count){
+        controlBulb(false, i: idx - 1);
+        if (idx < myManager.items.count){//tasks not done yet
+            controlBulb(true, i: idx);
             startTimer();
-        } else {
-            if(myManager.items.count > 0){
-                controlBulb(false, i: idx - 1);
+        } else {//all tasks done
+            if(myManager.items.count > 0){//there are some tasks in stted
                 timerLabel.text = "All tasks done";
                 imgView.image = UIImage(named:"cong.png");
                 taskLabel.text = "";
                 nextTaskLabel.text = "";
-                donebtn.addTarget(self, action: "pressed:", forControlEvents: .TouchUpInside)
-            } else {
+            
+            } else {//No tasks is setted
                 taskLabel.text = "";
                 timerLabel.text = "No task yet.";
                 nextTaskLabel.text = "Please go to settings to add tasks.";
             }
-
+            donebtn.addTarget(self, action: "pressed:", forControlEvents: .TouchUpInside)
         }
     }
     
+    //function to go to main screen
     func pressed(sender: UIButton!) {
         NSLog("last task button tapped");
         let vc: UINavigationController = storyboard!.instantiateViewControllerWithIdentifier("main_nav_screen") as! UINavigationController;
@@ -98,8 +111,6 @@ class TaskViewController : UIViewController {
     }
     
     func setUI(){
-        controlBulb(false, i: idx - 1);
-        controlBulb(true, i: idx);
         taskLabel.text = "Current task: " + myManager.items[idx].name
         imgView.image = myManager.items[idx].photo;
         if (idx + 1 < myManager.items.count){
@@ -114,22 +125,27 @@ class TaskViewController : UIViewController {
         if (on){
            onOffStr = "1";
         }
-        if (i >= 0){
-            let str:String = urls[i] + onOffStr;
+        if (i >= -1){
+            var str:String = "";
+            if (i >= 0){//tasks
+                str = urls[i] + onOffStr;
+            }else{//get up
+                str = getUpUrl + onOffStr;
+            }
             let url = NSURL (string: str);
             let req = NSURLRequest(URL: url!);
             if(on){
                 LightsWebView.loadRequest(req);
             } else {
-                //LightsWebView.loadRequest(req);
                 turnOffWebView.loadRequest(req);
             }
         }
     }
     
     func getup(){
+        controlBulb(true, i: -1);
         taskLabel.text = "Current task: get up";
-        timeCount = 30;
+        timeCount = getUpTime;
         timerLabel.text = timeString(timeCount)
         timer = NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "timerDidEnd:", userInfo: "Task Done!", repeats: true)
         imgView.image = UIImage(named:"getUp.jpg");
