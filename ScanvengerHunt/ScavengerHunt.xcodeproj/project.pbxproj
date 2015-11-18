@@ -14,9 +14,9 @@
 		696F5DF61BCB3671000B50AE /* setting for a task view controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696F5DF51BCB3671000B50AE /* setting for a task view controller.swift */; };
 		6972B5871BD6AA2D00DC14DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6972B5861BD6AA2D00DC14DA /* Main.storyboard */; };
 		699AEE461BF7CC7000438CC9 /* AlarmClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699AEE451BF7CC7000438CC9 /* AlarmClockViewController.swift */; };
-		699AEE4A1BF7D29500438CC9 /* getUp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 699AEE491BF7D29500438CC9 /* getUp.jpg */; };
 		69B28BB31BF57D7200471D27 /* smileface.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 69B28BB21BF57D7200471D27 /* smileface.jpg */; };
 		69B28BB51BF583F700471D27 /* cong.png in Resources */ = {isa = PBXBuildFile; fileRef = 69B28BB41BF583F700471D27 /* cong.png */; };
+		69BC73951BFBC22900C1C773 /* getUp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 69BC73941BFBC22900C1C773 /* getUp.jpg */; };
 		A7B086331BA243C2000DE495 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B086321BA243C2000DE495 /* AppDelegate.swift */; };
 		A7B0863A1BA243C2000DE495 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7B086391BA243C2000DE495 /* Images.xcassets */; };
 		A7B0863D1BA243C2000DE495 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7B0863B1BA243C2000DE495 /* LaunchScreen.xib */; };
@@ -44,9 +44,9 @@
 		696F5DF51BCB3671000B50AE /* setting for a task view controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "setting for a task view controller.swift"; sourceTree = "<group>"; };
 		6972B5861BD6AA2D00DC14DA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		699AEE451BF7CC7000438CC9 /* AlarmClockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmClockViewController.swift; sourceTree = "<group>"; };
-		699AEE491BF7D29500438CC9 /* getUp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = getUp.jpg; sourceTree = "<group>"; };
 		69B28BB21BF57D7200471D27 /* smileface.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = smileface.jpg; sourceTree = "<group>"; };
 		69B28BB41BF583F700471D27 /* cong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cong.png; sourceTree = "<group>"; };
+		69BC73941BFBC22900C1C773 /* getUp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = getUp.jpg; sourceTree = "<group>"; };
 		A7B0862D1BA243C2000DE495 /* ScavengerHunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScavengerHunt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7B086311BA243C2000DE495 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7B086321BA243C2000DE495 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,8 +99,8 @@
 		A7B0862F1BA243C2000DE495 /* ScavengerHunt */ = {
 			isa = PBXGroup;
 			children = (
-				699AEE491BF7D29500438CC9 /* getUp.jpg */,
 				695ABCD11BFAE0AC001A6CBD /* 12_clock.mp3 */,
+				69BC73941BFBC22900C1C773 /* getUp.jpg */,
 				69B28BB41BF583F700471D27 /* cong.png */,
 				69B28BB21BF57D7200471D27 /* smileface.jpg */,
 				699AEE451BF7CC7000438CC9 /* AlarmClockViewController.swift */,
@@ -228,9 +228,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6972B5871BD6AA2D00DC14DA /* Main.storyboard in Resources */,
-				699AEE4A1BF7D29500438CC9 /* getUp.jpg in Resources */,
 				69B28BB51BF583F700471D27 /* cong.png in Resources */,
 				69B28BB31BF57D7200471D27 /* smileface.jpg in Resources */,
+				69BC73951BFBC22900C1C773 /* getUp.jpg in Resources */,
 				695ABCD21BFAE0AC001A6CBD /* 12_clock.mp3 in Resources */,
 				A7B0863D1BA243C2000DE495 /* LaunchScreen.xib in Resources */,
 				A7B0863A1BA243C2000DE495 /* Images.xcassets in Resources */,

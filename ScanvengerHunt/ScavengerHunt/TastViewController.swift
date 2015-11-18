@@ -13,7 +13,7 @@ class TaskViewController : UIViewController {
 
     @IBOutlet weak var turnOffWebView: UIWebView!
     @IBOutlet weak var LightsWebView: UIWebView!
-    let myManager = ItemsManager()
+    var myManager = ItemsManager()
     var idx = 0
     
     //time for get up, in minutes
@@ -22,7 +22,7 @@ class TaskViewController : UIViewController {
     //url for get up
     let getUpUrl:String = "http://192.168.2.9/$";
     //urls for task
-    var urls: [String] = ["http://192.168.2.10/$",  "http://192.168.2.11/$", "http://192.168.2.12/$", "http://192.168.2.13/$"]
+    var urls: [String] = ["http://192.168.2.10/$",  "http://192.168.2.28/$", "http://192.168.2.12/$", "http://192.168.2.13/$","http://192.168.2.14/$", "http://192.168.2.15/$"]
 
     /*
     //urls used for test
@@ -38,9 +38,16 @@ class TaskViewController : UIViewController {
     var btnImg:UIImage!
     
     override func viewDidLoad() {
+        super.viewDidLoad();
+        
+        //a blank task
+        let newItem = ScavengerHuntItem(name: " ")
+        newItem.minutes = 0.002;
+        myManager.items += [newItem];
+        
         btnImg = UIImage(named:"smileface.jpg")
         donebtn.setImage(btnImg, forState: .Normal)
-        super.viewDidLoad();
+        
         getup();
     }
     
@@ -88,7 +95,7 @@ class TaskViewController : UIViewController {
             controlBulb(true, i: idx);
             startTimer();
         } else {//all tasks done
-            if(myManager.items.count > 0){//there are some tasks in stted
+            if(myManager.items.count > 1){//there are some tasks in setted
                 timerLabel.text = "All tasks done";
                 imgView.image = UIImage(named:"cong.png");
                 taskLabel.text = "";
@@ -139,6 +146,7 @@ class TaskViewController : UIViewController {
             } else {
                 turnOffWebView.loadRequest(req);
             }
+            NSLog(str)
         }
     }
     

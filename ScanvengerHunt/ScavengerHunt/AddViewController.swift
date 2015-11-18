@@ -36,22 +36,7 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIImagePickerCon
                     if let timeSetStr = timerTextField.text{
                         let timeSet = (timeSetStr as NSString).doubleValue
                         newItem!.minutes = timeSet
-                        
-                    /*
-                        let timer = NSTimer.scheduledTimerWithTimeInterval(timeSet * 60, target: self, selector: "update", userInfo: nil, repeats: true)
-                        newItem!.time = timer
-                    */
-                        
                     }
-                    
-                    /*
-                      else {
-                        let timer = NSTimer.scheduledTimerWithTimeInterval(180, target: self, selector: "update", userInfo: nil, repeats: true)
-                        newItem!.time = timer
-                    }
-                    */
-                    
-
                 }
                 
             }
@@ -99,7 +84,7 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIImagePickerCon
         textField.resignFirstResponder()
         
         // UIImagePickerController is a view controller that lets a user pick media from their photo library.
-        print("haha")
+
         let imagePickerController = UIImagePickerController()
         
         // Only allow photos to be picked, not taken.
