@@ -17,8 +17,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Override point for customization after application launch.
         
-        application.applicationIconBadgeNumber = 0;
+
+        /*  
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector:"developerAuthChanged:",
+            name: OBT_NOTIFICATION_DEVELOPER_AUTHENTICATION_STATUS_CHANGED,
+            object: nil);
         
+        
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector:"userAuthChanged",
+            name: OBT_NOTIFICATION_DEVELOPER_AUTHENTICATION_STATUS_CHANGED,
+            object: nil);
+        */
+        
+       /// OBTSDK.setupWithAPPid
+        //[OBTSDK setupWithAppID:@"{APP_APPID}" appKey:@"{APP_APPKEY}"];
+        
+        application.applicationIconBadgeNumber = 0;
         let notiftypes:UIUserNotificationType = UIUserNotificationType([.Alert, .Sound, .Badge]);
         
         

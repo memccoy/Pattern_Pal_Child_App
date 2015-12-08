@@ -11,6 +11,7 @@
 		6938DAA01BD667E1004B79B7 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6938DA9F1BD667E1004B79B7 /* AddViewController.swift */; };
 		693EBA041BF44A8300CA294C /* TastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693EBA031BF44A8300CA294C /* TastViewController.swift */; };
 		695ABCD21BFAE0AC001A6CBD /* 12_clock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 695ABCD11BFAE0AC001A6CBD /* 12_clock.mp3 */; };
+		695CC4C61C179C7600A187D6 /* OBTSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 695CC4C51C179C7600A187D6 /* OBTSDK.framework */; };
 		696F5DF41BCB2456000B50AE /* main screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696F5DF31BCB2456000B50AE /* main screen.swift */; };
 		696F5DF61BCB3671000B50AE /* setting for a task view controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696F5DF51BCB3671000B50AE /* setting for a task view controller.swift */; };
 		6972B5871BD6AA2D00DC14DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6972B5861BD6AA2D00DC14DA /* Main.storyboard */; };
@@ -42,6 +43,8 @@
 		6938DA9F1BD667E1004B79B7 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		693EBA031BF44A8300CA294C /* TastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TastViewController.swift; sourceTree = "<group>"; };
 		695ABCD11BFAE0AC001A6CBD /* 12_clock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 12_clock.mp3; sourceTree = "<group>"; };
+		695CC4BA1C17979500A187D6 /* ScavengerHunt-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ScavengerHunt-Bridging-Header.h"; path = "../ScavengerHunt-Bridging-Header.h"; sourceTree = "<group>"; };
+		695CC4C51C179C7600A187D6 /* OBTSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OBTSDK.framework; sourceTree = "<group>"; };
 		696F5DF31BCB2456000B50AE /* main screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "main screen.swift"; sourceTree = "<group>"; };
 		696F5DF51BCB3671000B50AE /* setting for a task view controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "setting for a task view controller.swift"; sourceTree = "<group>"; };
 		6972B5861BD6AA2D00DC14DA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -67,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				695CC4C61C179C7600A187D6 /* OBTSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +87,7 @@
 		A7B086241BA243C2000DE495 = {
 			isa = PBXGroup;
 			children = (
+				695CC4C51C179C7600A187D6 /* OBTSDK.framework */,
 				A7B0862F1BA243C2000DE495 /* ScavengerHunt */,
 				A7B086451BA243C2000DE495 /* ScavengerHuntTests */,
 				A7B0862E1BA243C2000DE495 /* Products */,
@@ -101,6 +106,7 @@
 		A7B0862F1BA243C2000DE495 /* ScavengerHunt */ = {
 			isa = PBXGroup;
 			children = (
+				695CC4BA1C17979500A187D6 /* ScavengerHunt-Bridging-Header.h */,
 				695ABCD11BFAE0AC001A6CBD /* 12_clock.mp3 */,
 				69BC73941BFBC22900C1C773 /* getUp.jpg */,
 				69B28BB41BF583F700471D27 /* cong.png */,
@@ -341,6 +347,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "ScavengerHunt-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -377,6 +384,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "ScavengerHunt-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -388,8 +396,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ScavengerHunt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ScavengerHunt",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pattern-pal-build-identifier.ScavengerHunt";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -403,8 +419,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ScavengerHunt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ScavengerHunt",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pattern-pal-build-identifier.ScavengerHunt";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
