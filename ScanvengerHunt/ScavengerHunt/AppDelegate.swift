@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Override point for customization after application launch.
         
+        application.applicationIconBadgeNumber = 0;
+        
         let notiftypes:UIUserNotificationType = UIUserNotificationType([.Alert, .Sound, .Badge]);
         
         
@@ -34,9 +36,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+        application.applicationIconBadgeNumber = 0;
         NSLog("Come from notification");
         let storyboard = UIStoryboard(name: "Main", bundle: nil);
         let rootVC = storyboard.instantiateViewControllerWithIdentifier("TaskViewController") as!TaskViewController;
+        var myManager = ItemsManager()
+        myManager.pp.alarm = "No alarm set";
+        myManager.save();
         self.window!.rootViewController = rootVC;
     }
 

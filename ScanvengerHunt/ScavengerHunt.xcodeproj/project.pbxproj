@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6925D9171C176AF900AF291A /* ppstruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6925D9161C176AF900AF291A /* ppstruct.swift */; };
 		6938DAA01BD667E1004B79B7 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6938DA9F1BD667E1004B79B7 /* AddViewController.swift */; };
 		693EBA041BF44A8300CA294C /* TastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693EBA031BF44A8300CA294C /* TastViewController.swift */; };
 		695ABCD21BFAE0AC001A6CBD /* 12_clock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 695ABCD11BFAE0AC001A6CBD /* 12_clock.mp3 */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6925D9161C176AF900AF291A /* ppstruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ppstruct.swift; sourceTree = "<group>"; };
 		6938DA9F1BD667E1004B79B7 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		693EBA031BF44A8300CA294C /* TastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TastViewController.swift; sourceTree = "<group>"; };
 		695ABCD11BFAE0AC001A6CBD /* 12_clock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 12_clock.mp3; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				696F5DF31BCB2456000B50AE /* main screen.swift */,
 				A7B086321BA243C2000DE495 /* AppDelegate.swift */,
 				A7B086541BA2723E000DE495 /* ScavengerHuntItem.swift */,
+				6925D9161C176AF900AF291A /* ppstruct.swift */,
 				693EBA031BF44A8300CA294C /* TastViewController.swift */,
 				A7B086561BA281EA000DE495 /* ItemsManager.swift */,
 				A7B086521BA258EB000DE495 /* ListViewController.swift */,
@@ -196,6 +199,11 @@
 					A7B0862C1BA243C2000DE495 = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = X8M5KZ44QZ;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					A7B086411BA243C2000DE495 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -251,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6925D9171C176AF900AF291A /* ppstruct.swift in Sources */,
 				A7B086331BA243C2000DE495 /* AppDelegate.swift in Sources */,
 				A7B086551BA2723E000DE495 /* ScavengerHuntItem.swift in Sources */,
 				6938DAA01BD667E1004B79B7 /* AddViewController.swift in Sources */,

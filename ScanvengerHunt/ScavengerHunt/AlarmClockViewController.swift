@@ -13,6 +13,11 @@ class AlarmClockViewController : UIViewController {
     
     @IBOutlet var dateTimePicker : UIDatePicker!;
     @IBOutlet var dateLabel : UILabel!;
+    var myManager = ItemsManager()
+    
+    override func viewDidLoad() {
+        dateLabel.text = myManager.pp.alarm;
+    }
     
     @IBAction func alarmSetButtonTapped(sender:UIButton) {
         
@@ -30,11 +35,13 @@ class AlarmClockViewController : UIViewController {
         scheduleLocalNotificationWithDate(dateTimePicker.date);
         
         //Changing Textbox:
-        dateLabel.text = "Alarm Set For: " + dateTimeString;
+        dateLabel.text = "Alarm Set For: \n" + dateTimeString;
         dateLabel.numberOfLines = 0;
         dateLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping;
         
-        
+        //Alarm persist string
+        myManager.pp.alarm = "Alarm Set For: \n" + dateTimeString;
+        myManager.save();
     }
     
     @IBAction func alarmCancelButtonTapped(sender:UIButton) {
@@ -51,7 +58,8 @@ class AlarmClockViewController : UIViewController {
     }
     
     func removeNotification() {
-        
+        myManager.pp.alarm = "No alarm set";
+        myManager.save();
         UIApplication.sharedApplication().cancelAllLocalNotifications();
     }
     

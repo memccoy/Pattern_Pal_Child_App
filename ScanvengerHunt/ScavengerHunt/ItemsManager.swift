@@ -9,8 +9,12 @@
 import UIKit
 
 class ItemsManager {
+    var pp = ppstruct()
     var items = [ScavengerHuntItem] ()
-    //var getUpItem: ScavengerHuntItem
+    
+    init (){
+       unarchiveSavedItems()
+    }
     
     func archivePath() -> String? {
         let directoryList = NSSearchPathForDirectoriesInDomains(
@@ -22,28 +26,42 @@ class ItemsManager {
         return nil
     }
     
-    func save() {
-        if let theArchivePath = archivePath() {
-            if !NSKeyedArchiver.archiveRootObject(items, toFile: theArchivePath) {
-                assertionFailure("Could not save data to \(theArchivePath)")
-            }/*
-            if !NSKeyedArchiver.archiveRootObject(getUpItem, toFile: theArchivePath + "/getUpTimeInterval") {
-                assertionFailure("Could not save data to \(theArchivePath)")
-            }*/
-        } else {
-            assertionFailure("Could not determine where to save file")
+    func archivePathForPP() -> String? {
+        let directoryList = NSSearchPathForDirectoriesInDomains(
+            NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        if let documentsPath = directoryList.first as String! {
+            return documentsPath + "/pp"
         }
+        
+        return nil
     }
+    
+
+    
     
     func unarchiveSavedItems() {
         if let theArchivePath = archivePath() {
             if NSFileManager.defaultManager().fileExistsAtPath(theArchivePath) {
                 items = NSKeyedUnarchiver.unarchiveObjectWithFile(theArchivePath) as! [ScavengerHuntItem]
+                if let theArchivePath = archivePathForPP() {
+                    pp = NSKeyedUnarchiver.unarchiveObjectWithFile(theArchivePath) as! ppstruct
+                }
             }
         }
     }
     
-    init() {
-        unarchiveSavedItems()
+    func save() {
+        if let theArchivePath = archivePath() {
+            if !NSKeyedArchiver.archiveRootObject(items, toFile: theArchivePath) {
+                assertionFailure("Could not save data to \(theArchivePath)")
+            }
+            if let theArchivePath = archivePathForPP() {
+                if !NSKeyedArchiver.archiveRootObject(pp, toFile: theArchivePath) {
+                    assertionFailure("Could not save data to \(theArchivePath)")
+                }
+            } else {
+                assertionFailure("Could not determine where to save file")
+            }
+        }
     }
-}
+};

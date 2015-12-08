@@ -13,7 +13,6 @@ class ScavengerHuntItem: NSObject, NSCoding {
     
     let name: String
     var photo: UIImage?
-    var time: NSTimer?
     var minutes:Double?
     
     var isCompleted: Bool {
@@ -24,16 +23,12 @@ class ScavengerHuntItem: NSObject, NSCoding {
     
     let nameKey = "name"
     let photoKey = "photo"
-    let timeKey = "time"
     let minsKey = "minutes"
     
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(name, forKey: nameKey)
         if let thePhoto = photo {
             aCoder.encodeObject(thePhoto, forKey: photoKey)
-        }
-        if let theTime = time {
-            aCoder.encodeObject(theTime, forKey: timeKey)
         }
         if let mins = minutes {
             aCoder.encodeObject(mins, forKey: minsKey)
@@ -44,7 +39,6 @@ class ScavengerHuntItem: NSObject, NSCoding {
     required init(coder aDecoder: NSCoder) {
         name = aDecoder.decodeObjectForKey(nameKey) as! String
         photo = aDecoder.decodeObjectForKey(photoKey) as? UIImage
-        time = aDecoder.decodeObjectForKey(timeKey) as? NSTimer
         minutes = aDecoder.decodeObjectForKey(minsKey) as? Double
     }
     
