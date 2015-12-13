@@ -61,15 +61,58 @@ class ListViewController: UITableViewController, UIImagePickerControllerDelegate
         if segue.identifier == "DoneItem" {
             let addVC = segue.sourceViewController as! AddViewController
             if addVC.ifedit {
-                myManager.items[addVC.rowin] = addVC.newItem!
+                var totalTime: Double;
+                totalTime = 0;
+                var oldTime: Double;
+                oldTime = myManager.items[addVC.rowin].minutes!;
+                
+                for(var i = 0; i < myManager.items.count; ++i) {
+                    
+                    totalTime = totalTime + myManager.items[i].minutes!;
+                    
+                }
+                
+                print(totalTime-oldTime);
+                print(addVC.newItem?.minutes);
+                
+                if(totalTime + (addVC.newItem?.minutes)! - oldTime > 1440){
+                    //do nothing
+                } else{
+                    myManager.items[addVC.rowin] = addVC.newItem!
+                }
+                
                 myManager.save()
                 self.tableView.reloadData()
             }else{
                 if let newItem = addVC.newItem {
-                    myManager.items += [newItem]
-                    myManager.save()
-                    let indexPath = NSIndexPath(forRow: myManager.items.count - 1, inSection: 0)
-                    tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+                    var totalTime: Double;
+                    totalTime = 0;
+                    for(var i = 0; i < myManager.items.count; ++i) {
+                        
+                        totalTime = totalTime + myManager.items[i].minutes!;
+                        
+                    }
+                    
+                    print(totalTime);
+                    print(newItem.minutes);
+                    
+                    if(totalTime + newItem.minutes! > 1440) {
+                        
+                        newItem.minutes = 0.0;
+                        
+                    }
+                    
+                    if(myManager.items.count > 50){
+                        
+                        //do nothing
+                        
+                    } else  {
+                        
+                        myManager.items += [newItem]
+                        myManager.save()
+                        let indexPath = NSIndexPath(forRow: myManager.items.count - 1, inSection: 0)
+                        tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+                    }
                 }
             }
         }

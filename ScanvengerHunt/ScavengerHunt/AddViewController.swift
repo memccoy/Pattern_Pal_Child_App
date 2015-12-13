@@ -41,7 +41,15 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIImagePickerCon
                     }
                     
                     if let timeSetStr = timerTextField.text{
-                        let timeSet = (timeSetStr as NSString).doubleValue
+                        var timeSet = (timeSetStr as NSString).doubleValue
+                        
+                        //check if less than 0
+                        if(timeSet < 0){
+                            timeSet = 0.0;
+                        } else if(timeSet > 1440){ //check if total time < 24 hours
+                            timeSet = 0.0;
+                        }
+                    
                         newItem!.minutes = timeSet
                     }
                     
@@ -60,6 +68,8 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIImagePickerCon
                     if let ip = IP3.text{
                         newItem!.IPs[3] = Int(ip)!
                     }
+                    
+                    
                 }
                 
             }
