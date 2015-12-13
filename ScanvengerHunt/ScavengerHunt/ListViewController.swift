@@ -49,6 +49,9 @@ class ListViewController: UITableViewController, UIImagePickerControllerDelegate
                 editController.img = selectedItem.photo
                 editController.ifedit = true;
                 editController.rowin = indexPath!.row;
+                for index in 0...3 {
+                    editController.ip[index] = selectedItem.IPs[index];
+                }
             }
         }
     }

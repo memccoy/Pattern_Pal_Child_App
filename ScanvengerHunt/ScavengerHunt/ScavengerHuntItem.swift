@@ -14,6 +14,7 @@ class ScavengerHuntItem: NSObject, NSCoding {
     let name: String
     var photo: UIImage?
     var minutes:Double?
+    var IPs:[Int]
     
     var isCompleted: Bool {
         get {
@@ -24,6 +25,7 @@ class ScavengerHuntItem: NSObject, NSCoding {
     let nameKey = "name"
     let photoKey = "photo"
     let minsKey = "minutes"
+    let IPKey = "IPs"
     
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(name, forKey: nameKey)
@@ -33,6 +35,7 @@ class ScavengerHuntItem: NSObject, NSCoding {
         if let mins = minutes {
             aCoder.encodeObject(mins, forKey: minsKey)
         }
+        aCoder.encodeObject(IPs, forKey: IPKey)
 
     }
     
@@ -40,10 +43,12 @@ class ScavengerHuntItem: NSObject, NSCoding {
         name = aDecoder.decodeObjectForKey(nameKey) as! String
         photo = aDecoder.decodeObjectForKey(photoKey) as? UIImage
         minutes = aDecoder.decodeObjectForKey(minsKey) as? Double
+        IPs = aDecoder.decodeObjectForKey(IPKey) as! [Int]
     }
     
     init(name: String) {
         self.name = name
         self.minutes = 3.0
+        self.IPs = [0,0,0,0]
     }
 }

@@ -13,6 +13,7 @@ class TaskViewController : UIViewController {
 
     @IBOutlet weak var turnOffWebView: UIWebView!
     @IBOutlet weak var LightsWebView: UIWebView!
+    var allDone = 1
     var myManager = ItemsManager()
     var idx = 0
     
@@ -20,9 +21,9 @@ class TaskViewController : UIViewController {
     let getUpTime:Double = 30;
 
     //url for get up
-    let getUpUrl:String = "http://192.168.2.9/$";
+    var getUpUrl:String = "http://"
     //urls for task
-    var urls: [String] = ["http://192.168.2.10/$",  "http://192.168.2.28/$", "http://192.168.2.12/$", "http://192.168.2.13/$","http://192.168.2.14/$", "http://192.168.2.15/$"]
+    var urls: [String] = []
 
     /*
     //urls used for test
@@ -48,6 +49,28 @@ class TaskViewController : UIViewController {
         btnImg = UIImage(named:"smileface.jpg")
         donebtn.setImage(btnImg, forState: .Normal)
         
+        for item in myManager.items{
+            var url = "http://"
+            for i in 0...3 {
+                if (i != 0){
+                    url += "."
+                }
+                url += String(item.IPs[i])
+            }
+            url += "/$"
+            urls.append(url)
+        }
+        
+        let getUPIPArr = myManager.pp.IPs;
+        for i in 0...3 {
+            if (i != 0){
+                getUpUrl += "."
+            }
+            getUpUrl += String(getUPIPArr[i])
+        }
+        getUpUrl += "/$"
+
+
         getup();
     }
     
@@ -71,6 +94,7 @@ class TaskViewController : UIViewController {
     func timerDidEnd(timer:NSTimer){
         timeCount = timeCount - timeInterval
         if (timeCount <= 0 ) {
+            allDone--;
             nextTask();
         }else {
             timerLabel.text =  timeString(timeCount)
@@ -96,7 +120,11 @@ class TaskViewController : UIViewController {
             startTimer();
         } else {//all tasks done
             if(myManager.items.count > 1){//there are some tasks in setted
-                timerLabel.text = "All tasks done";
+                if (allDone >= 0){
+                    timerLabel.text = "All tasks done";
+                } else {
+                    timerLabel.text = "Routine complete";
+                }
                 imgView.image = UIImage(named:"cong.png");
                 taskLabel.text = "";
                 nextTaskLabel.text = "";

@@ -13,12 +13,19 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIImagePickerCon
     var tx:String = "";
     var ifedit:Bool = false
     var rowin:Int = 0
+    var ip:[Int] = [192,168,2,0]
     
     @IBOutlet weak var timerTextField: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBAction func cancel(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    @IBOutlet weak var IP0: UITextField!
+    @IBOutlet weak var IP1: UITextField!
+    @IBOutlet weak var IP2: UITextField!
+    @IBOutlet weak var IP3: UITextField!
+    
     
     var img: UIImage?
     
@@ -37,6 +44,22 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIImagePickerCon
                         let timeSet = (timeSetStr as NSString).doubleValue
                         newItem!.minutes = timeSet
                     }
+                    
+                    if let ip = IP0.text{
+                        newItem!.IPs[0] = Int(ip)!
+                    }
+                    
+                    if let ip = IP1.text{
+                        newItem!.IPs[1] = Int(ip)!
+                    }
+                    
+                    if let ip = IP2.text{
+                        newItem!.IPs[2] = Int(ip)!
+                    }
+                    
+                    if let ip = IP3.text{
+                        newItem!.IPs[3] = Int(ip)!
+                    }
                 }
                 
             }
@@ -51,6 +74,12 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIImagePickerCon
         textField.text = tx;
         timerTextField.text = tmtx;
         photoImageView.image = img;
+        IP0.text = String(ip[0]);
+        IP1.text = String(ip[1]);
+        IP2.text = String(ip[2]);
+        IP3.text = String(ip[3]);
+        
+        
 
         // Set up views if editing an existing Meal.
 

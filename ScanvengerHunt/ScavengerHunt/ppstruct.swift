@@ -11,18 +11,23 @@ import Foundation
 class ppstruct: NSObject, NSCoding {
     
     var alarm: String
-
+    var IPs:[Int]
+    
     let alarmKey = "alarm"
+    let IPKey = "IPs"
     
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(alarm, forKey: alarmKey)
+        aCoder.encodeObject(IPs, forKey: IPKey)
     }
     
     required init(coder aDecoder: NSCoder) {
         alarm = aDecoder.decodeObjectForKey(alarmKey) as! String
+        IPs = aDecoder.decodeObjectForKey(IPKey) as! [Int]
     }
     
     override init() {
         self.alarm = "No alarm set."
+        self.IPs = [192,168,2,99]
     }
 }

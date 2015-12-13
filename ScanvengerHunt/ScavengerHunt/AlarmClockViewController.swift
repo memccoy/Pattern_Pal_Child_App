@@ -11,13 +11,41 @@ import UIKit
 
 class AlarmClockViewController : UIViewController {
     
+    @IBOutlet weak var IP0: UITextField!
+    @IBOutlet weak var IP1: UITextField!
+    @IBOutlet weak var IP2: UITextField!
+    @IBOutlet weak var IP3: UITextField!
+    
+    @IBOutlet weak var setIPbtn: UIButton!
+    @IBOutlet weak var btn: UIBarButtonItem!
     @IBOutlet var dateTimePicker : UIDatePicker!;
     @IBOutlet var dateLabel : UILabel!;
     var myManager = ItemsManager()
     
     override func viewDidLoad() {
         dateLabel.text = myManager.pp.alarm;
+        IP0.text = String( myManager.pp.IPs[0]);
+        IP1.text = String( myManager.pp.IPs[1]);
+        IP2.text = String( myManager.pp.IPs[2]);
+        IP3.text = String( myManager.pp.IPs[3]);
+        let tap: UITapGestureRecognizer
+            = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
     }
+    
+    //Calls this function when the tap is recognized.
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    @IBAction func setIPbtnTapped(sender: AnyObject) {
+        myManager.pp.IPs[0] = Int(IP0.text!)!
+        myManager.pp.IPs[1] = Int(IP1.text!)!
+        myManager.pp.IPs[2] = Int(IP2.text!)!
+        myManager.pp.IPs[3] = Int(IP3.text!)!
+        myManager.save()
+    }
+    
     
     @IBAction func alarmSetButtonTapped(sender:UIButton) {
         
