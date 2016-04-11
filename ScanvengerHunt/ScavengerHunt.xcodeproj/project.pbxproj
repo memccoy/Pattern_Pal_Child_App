@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B7EEE761CBB2FDE00778251 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B7EEE781CBB2FDE00778251 /* Main.storyboard */; };
+		0B7EEE7A1CBB312800778251 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7EEE791CBB312800778251 /* ViewController.swift */; };
+		58712F9A11B7CA0DFC7DA8B6 /* Pods_ScavengerHunt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 162A6D5033C4CEB0DAFD972D /* Pods_ScavengerHunt.framework */; };
 		6925D9171C176AF900AF291A /* ppstruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6925D9161C176AF900AF291A /* ppstruct.swift */; };
 		6938DAA01BD667E1004B79B7 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6938DA9F1BD667E1004B79B7 /* AddViewController.swift */; };
 		693EBA041BF44A8300CA294C /* TastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693EBA031BF44A8300CA294C /* TastViewController.swift */; };
@@ -14,7 +17,6 @@
 		695CC4C61C179C7600A187D6 /* OBTSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 695CC4C51C179C7600A187D6 /* OBTSDK.framework */; };
 		696F5DF41BCB2456000B50AE /* main screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696F5DF31BCB2456000B50AE /* main screen.swift */; };
 		696F5DF61BCB3671000B50AE /* setting for a task view controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696F5DF51BCB3671000B50AE /* setting for a task view controller.swift */; };
-		6972B5871BD6AA2D00DC14DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6972B5861BD6AA2D00DC14DA /* Main.storyboard */; };
 		699AEE461BF7CC7000438CC9 /* AlarmClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699AEE451BF7CC7000438CC9 /* AlarmClockViewController.swift */; };
 		69B28BB31BF57D7200471D27 /* smileface.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 69B28BB21BF57D7200471D27 /* smileface.jpg */; };
 		69B28BB51BF583F700471D27 /* cong.png in Resources */ = {isa = PBXBuildFile; fileRef = 69B28BB41BF583F700471D27 /* cong.png */; };
@@ -40,6 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B7EEE771CBB2FDE00778251 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0B7EEE791CBB312800778251 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		133A1A4527D85D8844F15EA9 /* Pods-ScavengerHunt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScavengerHunt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScavengerHunt/Pods-ScavengerHunt.debug.xcconfig"; sourceTree = "<group>"; };
+		162A6D5033C4CEB0DAFD972D /* Pods_ScavengerHunt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScavengerHunt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6925D9161C176AF900AF291A /* ppstruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ppstruct.swift; sourceTree = "<group>"; };
 		6938DA9F1BD667E1004B79B7 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		693EBA031BF44A8300CA294C /* TastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TastViewController.swift; sourceTree = "<group>"; };
@@ -48,7 +54,6 @@
 		695CC4C51C179C7600A187D6 /* OBTSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OBTSDK.framework; sourceTree = "<group>"; };
 		696F5DF31BCB2456000B50AE /* main screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "main screen.swift"; sourceTree = "<group>"; };
 		696F5DF51BCB3671000B50AE /* setting for a task view controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "setting for a task view controller.swift"; sourceTree = "<group>"; };
-		6972B5861BD6AA2D00DC14DA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		699AEE451BF7CC7000438CC9 /* AlarmClockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmClockViewController.swift; sourceTree = "<group>"; };
 		69B28BB21BF57D7200471D27 /* smileface.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = smileface.jpg; sourceTree = "<group>"; };
 		69B28BB41BF583F700471D27 /* cong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cong.png; sourceTree = "<group>"; };
@@ -64,6 +69,7 @@
 		A7B086521BA258EB000DE495 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		A7B086541BA2723E000DE495 /* ScavengerHuntItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScavengerHuntItem.swift; sourceTree = "<group>"; };
 		A7B086561BA281EA000DE495 /* ItemsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsManager.swift; sourceTree = "<group>"; };
+		FCA8B441D448FA4D8D8237D9 /* Pods-ScavengerHunt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScavengerHunt.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScavengerHunt/Pods-ScavengerHunt.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				695CC4C61C179C7600A187D6 /* OBTSDK.framework in Frameworks */,
+				58712F9A11B7CA0DFC7DA8B6 /* Pods_ScavengerHunt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +92,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1099DCA004D005D54906BEC9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				133A1A4527D85D8844F15EA9 /* Pods-ScavengerHunt.debug.xcconfig */,
+				FCA8B441D448FA4D8D8237D9 /* Pods-ScavengerHunt.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6D9E240843ED0D62358CE828 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				162A6D5033C4CEB0DAFD972D /* Pods_ScavengerHunt.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A7B086241BA243C2000DE495 = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +116,8 @@
 				A7B0862F1BA243C2000DE495 /* ScavengerHunt */,
 				A7B086451BA243C2000DE495 /* ScavengerHuntTests */,
 				A7B0862E1BA243C2000DE495 /* Products */,
+				1099DCA004D005D54906BEC9 /* Pods */,
+				6D9E240843ED0D62358CE828 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,7 +139,8 @@
 				69B28BB41BF583F700471D27 /* cong.png */,
 				69B28BB21BF57D7200471D27 /* smileface.jpg */,
 				699AEE451BF7CC7000438CC9 /* AlarmClockViewController.swift */,
-				6972B5861BD6AA2D00DC14DA /* Main.storyboard */,
+				0B7EEE781CBB2FDE00778251 /* Main.storyboard */,
+				0B7EEE791CBB312800778251 /* ViewController.swift */,
 				6938DA9F1BD667E1004B79B7 /* AddViewController.swift */,
 				696F5DF31BCB2456000B50AE /* main screen.swift */,
 				A7B086321BA243C2000DE495 /* AppDelegate.swift */,
@@ -162,9 +189,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A7B0864C1BA243C2000DE495 /* Build configuration list for PBXNativeTarget "ScavengerHunt" */;
 			buildPhases = (
+				9C220D3E26A216534C71597E /* Check Pods Manifest.lock */,
 				A7B086291BA243C2000DE495 /* Sources */,
 				A7B0862A1BA243C2000DE495 /* Frameworks */,
 				A7B0862B1BA243C2000DE495 /* Resources */,
+				21A867EA40C31A50B94231A5 /* Embed Pods Frameworks */,
+				36CF2B09D248C7845176541D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -243,7 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69CC4EEC1C1DDD7C0002CE80 /* Info.plist in Resources */,
-				6972B5871BD6AA2D00DC14DA /* Main.storyboard in Resources */,
+				0B7EEE761CBB2FDE00778251 /* Main.storyboard in Resources */,
 				69B28BB51BF583F700471D27 /* cong.png in Resources */,
 				69B28BB31BF57D7200471D27 /* smileface.jpg in Resources */,
 				69BC73951BFBC22900C1C773 /* getUp.jpg in Resources */,
@@ -262,6 +292,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		21A867EA40C31A50B94231A5 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScavengerHunt/Pods-ScavengerHunt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		36CF2B09D248C7845176541D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScavengerHunt/Pods-ScavengerHunt-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C220D3E26A216534C71597E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A7B086291BA243C2000DE495 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -271,6 +349,7 @@
 				A7B086331BA243C2000DE495 /* AppDelegate.swift in Sources */,
 				A7B086551BA2723E000DE495 /* ScavengerHuntItem.swift in Sources */,
 				6938DAA01BD667E1004B79B7 /* AddViewController.swift in Sources */,
+				0B7EEE7A1CBB312800778251 /* ViewController.swift in Sources */,
 				696F5DF61BCB3671000B50AE /* setting for a task view controller.swift in Sources */,
 				A7B086531BA258EB000DE495 /* ListViewController.swift in Sources */,
 				699AEE461BF7CC7000438CC9 /* AlarmClockViewController.swift in Sources */,
@@ -299,6 +378,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0B7EEE781CBB2FDE00778251 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0B7EEE771CBB2FDE00778251 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		A7B0863B1BA243C2000DE495 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -394,6 +481,7 @@
 		};
 		A7B0864D1BA243C2000DE495 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 133A1A4527D85D8844F15EA9 /* Pods-ScavengerHunt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -417,6 +505,7 @@
 		};
 		A7B0864E1BA243C2000DE495 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCA8B441D448FA4D8D8237D9 /* Pods-ScavengerHunt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
